@@ -65,7 +65,8 @@ export const login = async (req, res) => {
             user,
         });
 
-    } catch (error) {
+    } 
+    catch (error) {
         return res.status(401).json({
             message: error.message,
         });
@@ -91,7 +92,8 @@ export const logout = async (req, res) => {
             message: "Logged out successfully"
         });
 
-    } catch (error) {
+    } 
+    catch (error) {
         return res.status(500).json({
             success: false,
             message: error.message
@@ -146,7 +148,8 @@ export const updatePlan = async (req, res) => {
             success: true
         });
 
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error);
         return res.status(500).json({
             success: false,
@@ -215,7 +218,8 @@ export const deductCredits = async (req, res) => {
             credits: user.credits
         });
 
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error);
         return res.status(500).json({
             success: false,
