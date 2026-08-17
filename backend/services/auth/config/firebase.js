@@ -13,3 +13,8 @@ import serviceAccount from "../serviceAccount.json" with { type: "json" };
 export const app = initializeApp({
   credential: cert(serviceAccount),
 });
+
+
+// In your multi-agent platform, users authenticate via Firebase Authentication on the frontend. 
+//The frontend receives a Firebase ID token (JWT). 
+//To verify that token on the backend, you need the Firebase Admin SDK.
