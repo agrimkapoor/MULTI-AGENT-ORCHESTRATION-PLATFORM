@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
    name : String,
    email : String,
    avatar : String, // URL of the user's profile picture
-   provider : String,
+   provider : String, // google authen ya github authen
    plan : { // user ke paas kaunsa plan hai  by default its free
        type : String,
        default : "free"
