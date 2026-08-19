@@ -1,0 +1,37 @@
+import express from "express";
+import dotenv from "dotenv";
+
+import connectDB from "./config/db.js";
+import router from "./routes/agent.route.js";
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT;
+
+// Middleware
+app.use(express.json());
+
+// Routes
+app.use("/", router);
+
+// Global error-handling middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+
+  if (err.status) {
+    return res.status(err.status).json(err.data);
+  }
+
+  return res.status(500).json({
+    success: false,
+    message: err.message || "Internal Server Error",
+  });
+});
+
+// Start server
+app.listen(port, () => {
+  connectDB();
+
+  console.log(`Agent service running on ${port}`);
+});
