@@ -1,6 +1,7 @@
+// razorpay ko configure kar rhe hai
 // this file is razorpay gateway initialisation
 //It sets up the Razorpay SDK using API keys from environment variables, allowing your backend to create orders, verify payments, and handle transactions.
-import Razorpay from "razorpay";
+import Razorpay from "razorpay"; // npm i razorpay kara tha 
 import dotenv from "dotenv";
 
 dotenv.config();
