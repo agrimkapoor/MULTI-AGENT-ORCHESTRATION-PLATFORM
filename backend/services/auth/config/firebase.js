@@ -1,5 +1,19 @@
-//his file is the Firebase Admin SDK initialization for your authentication service. 
+//this file is the Firebase Admin SDK initialization for your authentication service. 
 //It sets up the Firebase Admin SDK using a service account JSON file, which grants your backend full administrative access to Firebase services
+
+/*
+  Frontend
+   ↓
+Firebase Authentication
+   ↓
+User login
+   ↓
+Firebase ID Token
+
+To verify that token on the backend, you need the Firebase Admin SDK.
+
+toh iss file mei firebase admin sdk ko initialise kardo
+*/
 
 import { initializeApp, cert } from "firebase-admin/app";
 //initialiseApp func is used to initialise the firebase admin sdk
