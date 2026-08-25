@@ -5,10 +5,10 @@ export const protect = async (req, res, next) => {
     const sessionId = req?.cookies?.session;
     if (!sessionId) { // cookie hi nhi hai matlab user ke paas login session hi nhi hai
       return res.status(401).json({
-        message: "Unauthorized"
+        message: "Unauthorized" // user is not authenticated
       });
     }
-
+    // cookie hai toh redis check
     const session = await redis.get(
       `session:${sessionId}`
     );
