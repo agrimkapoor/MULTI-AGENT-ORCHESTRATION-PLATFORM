@@ -9,7 +9,9 @@ export const login = async (req, res) => {
     try {
         //extract the token from req.body :  The frontend sends the Firebase ID token to backend
         //Frontend par user Firebase se login karta hai. Firebase frontend ko ek ID token deta hai.
+        
         const { token } = req.body; // object destructing
+        //const token = req.body.token; ye bhi sahi hai
 
         //verify token using firebase admin sdk 
         //Ye important hai because client/browser se aane wale data par blindly trust nahi karna chahiye
